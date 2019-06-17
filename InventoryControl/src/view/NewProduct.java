@@ -18,7 +18,7 @@ public class NewProduct extends JFrame {
     private JLabel jlName, jlPrice, jlSector;
     private JTextField txName, txPrice, txSector;
 
-    public NewProduct(){
+    public NewProduct(){ 
     setLayout(null);
     setTitle("New");
     setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -26,7 +26,7 @@ public class NewProduct extends JFrame {
     setLocationRelativeTo(null); 
     getContentPane().setBackground(new Color(64, 64, 64));
         
-    // ~~~~~~~~~~~ FIELDS ~~~~~~~~~~~~~~~~~
+    // ~~~~~~~~~~~ FIELDS ~~~~~~~~~~~~~~~~
     jlName = new JLabel ("Name: ");
     jlName.setSize(50,25); // LARGURA X ALTURA ** TAMANHO
     jlName.setLocation(30,40); // LARGURA X ALTURA ** LOCALIZAÇÃO
