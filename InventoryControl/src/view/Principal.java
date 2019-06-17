@@ -32,7 +32,7 @@ public class Principal extends JFrame {
     setLayout(null);
         setTitle("Agenda");
         setDefaultCloseOperation(EXIT_ON_CLOSE); //Fechar aplicação em X
-        setSize(670, 550); //Tamanho da janela (largura, altura);
+        setSize(670, 480); //Tamanho da janela (largura, altura);
         setLocationRelativeTo(null); //Centralizado
         getContentPane().setBackground(new Color(64, 64, 64));
         
@@ -80,76 +80,75 @@ public class Principal extends JFrame {
         jbInput = new JButton("ENTRADA");
         jbInput.setSize(150, 70);
         jbInput.setLocation(10, 340);
-        jbInput.setBackground(new Color(104, 197, 92));
-        jbInput.setForeground(Color.white);
+        jbInput.setBackground(new Color(81, 195, 66));
         //.addActionListener(this);
         //Change color of button
         jbInput.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
-                jbInput.setBackground(new Color(81, 195, 66)); } // Color selected
+                jbInput.setBackground(new Color(82, 176, 70)); } // Color selected
 
             public void mouseExited(MouseEvent me) {
-                jbInput.setBackground(new Color(104, 197, 92));}
+                jbInput.setBackground(new Color(81, 195, 66));}
         }); // Color in normal state
         add(jbInput);
         
         jbOutput = new JButton("SAÍDA");
         jbOutput.setSize(150, 70);
         jbOutput.setLocation(175, 340);
-        jbOutput.setBackground(new Color(255,20,147));
+        jbOutput.setBackground(new Color(81, 195, 66));
         //.addActionListener(this);
         //Change color of button
         jbOutput.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
-                jbOutput.setBackground(new Color(199,21,133)); } // Color selected
+                jbOutput.setBackground(new Color(82, 176, 70)); } // Color selected
 
             public void mouseExited(MouseEvent me) {
-                jbOutput.setBackground(new Color(255,20,147));}
+                jbOutput.setBackground(new Color(81, 195, 66));}
         }); // Color in normal state
         add(jbOutput);
     
         jbStore = new JButton("LOJA");
         jbStore.setSize(130, 30);
         jbStore.setLocation(335, 340);
-        jbStore.setBackground(new Color(255,20,147));
+        jbStore.setBackground(new Color(81, 195, 66));
         //.addActionListener(this);
         //Change color of button
         jbStore.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
-                jbStore.setBackground(new Color(199,21,133)); } // Color selected
+                jbStore.setBackground(new Color(82, 176, 70)); } // Color selected
 
             public void mouseExited(MouseEvent me) {
-                jbStore.setBackground(new Color(255,20,147));}
+                jbStore.setBackground(new Color(81, 195, 66));}
         }); // Color in normal state
         add(jbStore);
         
         jbProvider = new JButton("FORNECEDOR");
         jbProvider.setSize(130, 30);
         jbProvider.setLocation(335, 380);
-        jbProvider.setBackground(new Color(255,20,147));
+        jbProvider.setBackground(new Color(81, 195, 66));
         //.addActionListener(this);
         //Change color of button
         jbProvider.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
-                jbProvider.setBackground(new Color(199,21,133)); } // Color selected
+                jbProvider.setBackground(new Color(82, 176, 70)); } // Color selected
 
             public void mouseExited(MouseEvent me) {
-                jbProvider.setBackground(new Color(255,20,147));}
+                jbProvider.setBackground(new Color(81, 195, 66));}
         }); // Color in normal state
         add(jbProvider);
         
         jbSector = new JButton("SETOR");
         jbSector.setSize(130, 30);
         jbSector.setLocation(470, 340);
-        jbSector.setBackground(new Color(255,20,147));
+        jbSector.setBackground(new Color(81, 195, 66));
         //.addActionListener(this);
         //Change color of button
         jbSector.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
-                jbSector.setBackground(new Color(199,21,133)); } // Color selected
+                jbSector.setBackground(new Color(82, 176, 70)); } // Color selected
 
             public void mouseExited(MouseEvent me) {
-                jbSector.setBackground(new Color(255,20,147));}
+                jbSector.setBackground(new Color(81, 195, 66));}
         }); // Color in normal state
         add(jbSector);
 }
