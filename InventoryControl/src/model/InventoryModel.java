@@ -9,7 +9,7 @@ import utils.ConnectionFactory;
 
 /**
  *
- * @author Pc
+ * @author Mari
  */
 public class InventoryModel {
     

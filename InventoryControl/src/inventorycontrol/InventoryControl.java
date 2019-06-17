@@ -13,7 +13,7 @@ import view.Principal;
 
 /**
  *
- * @author Pc
+ * @author Mari
  */
 public class InventoryControl {
 

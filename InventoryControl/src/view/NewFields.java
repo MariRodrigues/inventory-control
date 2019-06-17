@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Pc
+ * @author Mariana
  */
 public class NewFields extends JFrame {
     private JButton jbRegister, jbCancel;
