@@ -1,7 +1,10 @@
 package view;
 
+import bean.Sector;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
@@ -18,7 +21,7 @@ import javax.swing.JFrame;
  *
  * @author Mariana
  */
-public class Principal extends JFrame {
+public class Principal extends JFrame implements ActionListener{
     
     private JPanel pnTabela;
     private JButton jbInput, jbOutput, jbStore, jbSector, jbProduct, jbProvider;
@@ -36,13 +39,13 @@ public class Principal extends JFrame {
         setLocationRelativeTo(null); //Centralizado
         getContentPane().setBackground(new Color(64, 64, 64));
         
+        // ~~~~~~~~~~~~~~ FIELDS ~~~~~~~~~~~~~~~~
         lblSector = new JLabel ("Sector:");
         lblSector.setSize(50,25); // LARGURA X ALTURA ** TAMANHO
         lblSector.setLocation(30,20); // LARGURA X ALTURA ** LOCALIZAÇÃO
         lblSector.setForeground(Color.white);
         add(lblSector);
         
-        // Fields
         txSector = new JTextField ();
         txSector.setSize(200,25);
         txSector.setLocation(85,20);
@@ -59,7 +62,7 @@ public class Principal extends JFrame {
         txProduct.setLocation(380,20);
         add(txProduct);
         
-        // Table
+        // ~~~~~~~~~~~~~~ TABLE ~~~~~~~~~~~~~~~~
         pnTabela = new JPanel(null);
         pnTabela.setLayout(new GridLayout(1, 1));
         pnTabela.setLocation(10, 70);
@@ -76,12 +79,12 @@ public class Principal extends JFrame {
         );
         pnTabela.add(scrRoll);
         
-        // Buttons
+        // ~~~~~~~~~~~~~~ BUTTONS ~~~~~~~~~~~~~~~~
         jbInput = new JButton("ENTRADA");
         jbInput.setSize(150, 70);
         jbInput.setLocation(10, 340);
         jbInput.setBackground(new Color(81, 195, 66));
-        //.addActionListener(this);
+        jbInput.addActionListener(this);
         //Change color of button
         jbInput.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
@@ -96,7 +99,7 @@ public class Principal extends JFrame {
         jbOutput.setSize(150, 70);
         jbOutput.setLocation(175, 340);
         jbOutput.setBackground(new Color(81, 195, 66));
-        //.addActionListener(this);
+        jbOutput.addActionListener(this);
         //Change color of button
         jbOutput.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
@@ -108,10 +111,10 @@ public class Principal extends JFrame {
         add(jbOutput);
     
         jbStore = new JButton("LOJA");
-        jbStore.setSize(130, 30);
+        jbStore.setSize(148, 30);
         jbStore.setLocation(335, 340);
         jbStore.setBackground(new Color(81, 195, 66));
-        //.addActionListener(this);
+        jbStore.addActionListener(this);
         //Change color of button
         jbStore.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
@@ -123,11 +126,10 @@ public class Principal extends JFrame {
         add(jbStore);
         
         jbProvider = new JButton("FORNECEDOR");
-        jbProvider.setSize(130, 30);
+        jbProvider.setSize(148, 30);
         jbProvider.setLocation(335, 380);
         jbProvider.setBackground(new Color(81, 195, 66));
-        //.addActionListener(this);
-        //Change color of button
+        jbProvider.addActionListener(this);
         jbProvider.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
                 jbProvider.setBackground(new Color(82, 176, 70)); } // Color selected
@@ -138,10 +140,10 @@ public class Principal extends JFrame {
         add(jbProvider);
         
         jbSector = new JButton("SETOR");
-        jbSector.setSize(130, 30);
-        jbSector.setLocation(470, 340);
+        jbSector.setSize(148, 30);
+        jbSector.setLocation(490, 340);
         jbSector.setBackground(new Color(81, 195, 66));
-        //.addActionListener(this);
+        jbSector.addActionListener(this);
         //Change color of button
         jbSector.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent me) {
@@ -151,5 +153,43 @@ public class Principal extends JFrame {
                 jbSector.setBackground(new Color(81, 195, 66));}
         }); // Color in normal state
         add(jbSector);
+        
+        jbProduct = new JButton("PRODUTO");
+        jbProduct.setSize(148, 30); //Largura x Altura
+        jbProduct.setLocation(490, 380);
+        jbProduct.setBackground(new Color(81, 195, 66));
+        jbProduct.addActionListener(this);
+        //Change color of button
+        jbProduct.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent me) {
+                jbProduct.setBackground(new Color(82, 176, 70)); } // Color selected
+
+            public void mouseExited(MouseEvent me) {
+                jbProduct.setBackground(new Color(81, 195, 66));}
+        }); // Color in normal state
+        add(jbProduct);
 }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == jbSector){
+            NewFields nf = new NewFields();
+            nf.setVisible(true);  
+        }
+        
+        if (ae.getSource() == jbStore){
+            NewFields nf = new NewFields();
+            nf.setVisible(true);  
+        }
+        
+        if (ae.getSource() == jbProvider){
+            NewFields nf = new NewFields();
+            nf.setVisible(true);  
+        }
+        
+        if (ae.getSource() == jbProduct){
+            NewProduct np = new NewProduct();
+            np.setVisible(true);  
+        }
+    }
 }
